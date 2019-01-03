@@ -1,0 +1,24 @@
+spring:
+  application:
+      name: ZUUL-GATE-WAY
+server:
+  port: 9091
+
+eureka:
+  client:
+    serviceUrl:
+       defaultZone: http://eureka-service:8761/eureka/
+    register-with-eureka: true
+    fetchRegistry: true
+    healthcheck:
+       enabled: true
+
+zuul:
+  routes:
+    rest-service:
+      path: /rest-service/**
+      serviceId: REST-APP
+    rest:
+      url: http://localhost:8083,
+
+#zuul_routes_rest_url =

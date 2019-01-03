@@ -1,0 +1,10 @@
+version: '2'
+
+services:
+  zuul-service:
+     build: .
+     ports:
+       - "9091:9091"
+     depends_on:
+       - eureka-service
+
